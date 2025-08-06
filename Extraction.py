@@ -4,5 +4,6 @@ def extraction():
     try:
         data = pd.read_csv(r'zipco_transaction.csv')
         print("Data loaded successfully!")
+        return data
     except Exception as e:
         print(f"An error occurred: {e}")

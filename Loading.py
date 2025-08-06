@@ -5,14 +5,18 @@ import os
 
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(override=True)
+
+cleandir = './data/cleaned'
+
+
 
 def loading():
-    data = pd.read_csv(r'clean_data.csv')
-    products = pd.read_csv(r'products.csv')
-    customers = pd.read_csv(r'customers.csv')
-    staff = pd.read_csv(r'staff.csv')
-    transactions = pd.read_csv(r'transactions.csv')
+    data = pd.read_csv(f'{cleandir}/clean_data.csv')
+    products = pd.read_csv(f'{cleandir}/products.csv')
+    customers = pd.read_csv(f'{cleandir}/customers.csv')
+    staff = pd.read_csv(f'{cleandir}/staff.csv')
+    transactions = pd.read_csv(f'{cleandir}/transactions.csv')
     
     # Create a BlobServiceClient object
     connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')

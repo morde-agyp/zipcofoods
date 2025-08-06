@@ -1,8 +1,8 @@
 import pandas as pd
-
+from Extraction import extraction
 
 def transformation():
-    data = pd.read_csv(r'zipco_transaction.csv')
+    data = extraction()
     # Remove duplicates
     data.drop_duplicates(inplace=True)
 
